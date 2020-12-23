@@ -18,9 +18,10 @@ class App extends React.Component {
         <div className="cards-holder">
           <h1>{this.state.mode}</h1>
           <Card
-            title="Day 1: Website"
+            title="Day 1: Website with dark mode"
             summary="A website that showcases all the projects"
             link="https://www.github.com"
+            languages = "Javascript(React)"
             mode={this.state.dark}
           />
         </div>

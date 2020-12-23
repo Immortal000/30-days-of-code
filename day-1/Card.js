@@ -12,6 +12,7 @@ class Card extends React.Component {
       >
         <h1 className="card-title">{this.props.title}</h1>
         <p className="card-summary">{this.props.summary}</p>
+        <p>Languages: {this.props.languages}</p>
         <a href={this.props.link} className="code-link">
           Github
         </a>
