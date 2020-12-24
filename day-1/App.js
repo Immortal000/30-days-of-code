@@ -30,7 +30,6 @@ class App extends React.Component {
         <label htmlFor="mode">Dark Mode:</label>
         <input type="checkbox" name="mode" onClick={changeMode} />
         <div className="cards-holder">
-          <h1>{this.state.mode}</h1>
           {this.state.info.map((data) => {
             return (
               <Card

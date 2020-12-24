@@ -13,10 +13,10 @@ body {
 .root {
   padding: 5px;
 }
-.card-holder {
+.cards-holder {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .card {
