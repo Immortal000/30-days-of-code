@@ -3,8 +3,8 @@ class Timer extends React.Component {
     super(props);
     this.state = {
       totalSeconds: 0,
-      interval: 0,
     };
+    this.interval = 0;
   }
 
   render() {
@@ -15,20 +15,21 @@ class Timer extends React.Component {
 
     const reset = () => {
       this.setState({ totalSeconds: 0 });
-      clearInterval(this.state.interval);
+      clearInterval(this.interval);
+      this.setState({ interval: 0 });
       document.title = "Timer";
     };
 
     const addTime = (seconds) => {
+      reset();
       this.setState({ totalSeconds: seconds }, () => {
-        this.setState({
-          interval: setInterval(() => {
-            timer();
-            if (this.state.totalSeconds == 0) {
-              clearInterval(this.state.interval);
-            }
-          }, 1000),
-        });
+        this.interval = setInterval(() => {
+          timer();
+          if (this.state.totalSeconds == 0) {
+            clearInterval(this.interval);
+            this.setState({ interval: 0 });
+          }
+        }, 1000);
       });
     };
     return (
